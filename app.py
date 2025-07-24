@@ -3,7 +3,7 @@ import os
 import yt_dlp
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16) 
+app.secret_key = "your_secret_key_here"  # Replace with a secure key for production
 
 DOWNLOAD_FOLDER = "downloads"
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
@@ -23,15 +23,13 @@ def youtube_downloader():
         try:
             ydl_opts = {
                 'outtmpl': os.path.join(DOWNLOAD_FOLDER, '%(title)s.%(ext)s'),
-                'format': 'best'
+                'format': 'best',
+                'quiet': True,
             }
-
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(url, download=True)
                 filename = ydl.prepare_filename(info)
-
             return send_file(filename, as_attachment=True)
-
         except Exception as e:
             flash(f"Error: {e}")
             return redirect(url_for("youtube_downloader"))
@@ -42,9 +40,10 @@ def youtube_downloader():
 def about():
     return render_template("about.html")
 
-@app.route("/links")
-def links():
-    return render_template("links.html")
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Cloud Run listens on port 8080
+    app.run(host="0.0.0.0", port=8080, debug=False)
