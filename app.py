@@ -3,7 +3,7 @@ import os
 import yt_dlp
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key_here"  # Replace with a secure key for production
+app.secret_key = secrets.token_hex(16)
 
 DOWNLOAD_FOLDER = "downloads"
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
