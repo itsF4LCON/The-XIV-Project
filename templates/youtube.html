@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YouTube Downloader - The XIV Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("downloadForm");
+      const loader = document.getElementById("loader");
+
+      form.addEventListener("submit", () => {
+        loader.style.display = "block";
+      });
+    });
+  </script>
+</head>
+<body>
+  <img src="{{ url_for('static', filename='XIVlog.jpg') }}" alt="XIV Logo" id="header-image">
+  <h1>The XIV Project / YouTube Downloader</h1>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li style="color: lightgreen; font-weight: bold; margin-top: 20px;">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <main>
+    <form id="downloadForm" method="POST">
+      <label for="url">YouTube URL:</label><br />
+      <input type="text" id="url" name="url" size="60" /><br /><br />
+      <button class="download" type="submit">Download</button>
+    </form>
+
+    <div id="loader" style="display:none;">Downloading video, give me some time...</div>
+  </main>
+
+  <p style="margin-top: 40px;">
+    <a href="{{ url_for('home') }}" class="back-link">&larr; Back to Home</a>
+  </p>
+</body>
+</html>

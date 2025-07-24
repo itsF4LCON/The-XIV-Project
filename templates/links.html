@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact / Links - The XIV Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+      <img src="{{ url_for('static', filename='XIVlog.jpg') }}" alt="XIV Logo" id="header-image">
+  <h1>The XIV Project / Contact Me</h1>
+
+  <div class="links-container">
+    <a href="https://github.com/itsF4LCON" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.instagram.com/ran.geerts" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="mailto:xiv.develop@gmail.com">Email Me</a>
+  </div>
+
+  <p style="margin-top: 40px;">
+    <a href="{{ url_for('home') }}" class="back-link">&larr; Back to Home</a>
+  </p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About - The XIV Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <img src="{{ url_for('static', filename='XIVlog.jpg') }}" alt="XIV Logo" id="header-image">
+  <h1>The XIV Project / About</h1>
+
+  <main>
+    <p>
+        I'm a 16-year-old who started learning how to code at 12.<br>
+        This website is my portfolio and collection of projects.<br>
+        The XIV Project is one big project where I test my skills and learn new things.<br>
+        My dream job is to work as a software engineer or in red team cybersecurity.
+    </p>
+
+  </main>
+
+  <p style="margin-top: 40px;">
+    <a href="{{ url_for('home') }}" class="back-link">&larr; Back to Home</a>
+  </p>
+</body>
+</html>
