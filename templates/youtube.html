@@ -2,42 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>YouTube Downloader - The XIV Project</title>
+  <title>YouTube Downloader</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("downloadForm");
-      const loader = document.getElementById("loader");
-
-      form.addEventListener("submit", () => {
-        loader.style.display = "block";
-      });
-    });
-  </script>
 </head>
 <body>
   <img src="{{ url_for('static', filename='XIVlog.jpg') }}" alt="XIV Logo" id="header-image">
-  <h1>The XIV Project / YouTube Downloader</h1>
+  <h1>YouTube Downloader</h1>
 
   {% with messages = get_flashed_messages() %}
     {% if messages %}
-      <ul>
+      <div class="flash-message">
         {% for message in messages %}
-          <li style="color: lightgreen; font-weight: bold; margin-top: 20px;">{{ message }}</li>
+          <p>{{ message }}</p>
         {% endfor %}
-      </ul>
+      </div>
     {% endif %}
   {% endwith %}
 
-  <main>
-    <form id="downloadForm" method="POST">
-      <label for="url">YouTube URL:</label><br />
-      <input type="text" id="url" name="url" size="60" /><br /><br />
-      <button class="download" type="submit">Download</button>
-    </form>
-
-    <div id="loader" style="display:none;">Downloading video, give me some time...</div>
-  </main>
+  <form method="POST">
+    <input type="text" name="url" placeholder="Enter YouTube URL" required>
+    <button type="submit" class="download">Download</button>
+  </form>
 
   <p style="margin-top: 40px;">
     <a href="{{ url_for('home') }}" class="back-link">&larr; Back to Home</a>
