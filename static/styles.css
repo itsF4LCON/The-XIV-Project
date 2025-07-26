@@ -1,4 +1,3 @@
-/* General body styles */
 body {
     background-color: black;
     color: white;
@@ -8,19 +7,16 @@ body {
     margin: 0;
 }
 
-/* Logo image */
 #header-image {
     display: block;
     margin: 0 auto 20px auto;
     max-width: 200px;
 }
 
-/* Headings */
 h1 {
     margin-bottom: 30px;
 }
 
-/* Projects container on home */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -29,7 +25,6 @@ h1 {
     margin-top: 40px;
 }
 
-/* Project boxes */
 .project-box {
     background-color: #222;
     border: 2px solid #444;
@@ -46,57 +41,38 @@ h1 {
     border-color: #00acee;
 }
 
-/* Links container for links page */
 .links-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     max-width: 400px;
-    margin: 40px auto 0 auto;
-    align-items: center;
+    margin: 0 auto;
 }
 
-/* Link styling */
 .links-container a {
-    color: white;
+    background: #222;
+    padding: 15px;
+    border-radius: 6px;
+    color: #00acee;
     text-decoration: none;
     font-size: 1.2em;
-    font-weight: 600;
-    padding: 10px 25px;
-    border: 2px solid white;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
+    transition: background 0.3s, color 0.3s;
 }
 
-.links-container a:hover,
-.links-container a:focus {
-    background-color: #00acee;
-    color: black;
-    outline: none;
+.links-container a:hover {
+    background: #333;
+    color: #1da1f2;
 }
 
-/* Back link styling */
 .back-link {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1em;
-    margin-top: 40px;
-    display: inline-block;
-    transition: color 0.3s ease;
 }
 
-.back-link:hover,
-.back-link:focus {
-    color: #00acee;
+.back-link:hover {
     text-decoration: underline;
-    outline: none;
 }
 
-/* Input and button styling for youtube page */
 input[type="text"] {
     padding: 8px;
     font-size: 1em;
@@ -119,9 +95,11 @@ button.download:hover {
     background-color: gray;
 }
 
-/* Loader style for youtube page */
-#loader {
-    display: none;
+.flash-message {
+    background: #222;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #00ff99;
     font-weight: bold;
-    margin-top: 20px;
 }
