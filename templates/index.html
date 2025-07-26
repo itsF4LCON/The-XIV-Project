@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The XIV Project - Home</title>
+  <title>The XIV Project</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <img src="{{ url_for('static', filename='XIVlog.jpg') }}" alt="XIV Logo" id="header-image">
   <h1>The XIV Project</h1>
+  <p>Welcome to my portfolio and projects!</p>
 
   <div class="projects-container">
     <a href="{{ url_for('youtube_downloader') }}" class="project-box">YouTube Downloader</a>
     <a href="{{ url_for('about') }}" class="project-box">About</a>
-    <a href="{{ url_for('links') }}" class="project-box">Links</a>
+    <a href="{{ url_for('links') }}" class="project-box">Contact / Links</a>
   </div>
 </body>
 </html>
